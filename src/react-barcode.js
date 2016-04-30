@@ -13,9 +13,11 @@ if (version[0] === '0' && version[1] === '13' || version[1] === '12') {
   getDOMNode = (ref) => ref;
 }
 
+
 var Barcode = React.createClass({
   propTypes: {
     value: React.PropTypes.string.isRequired,
+    renderer: React.PropTypes.string,
     format: React.PropTypes.string,
     width: React.PropTypes.number,
     height: React.PropTypes.number,
@@ -38,6 +40,7 @@ var Barcode = React.createClass({
   getDefaultProps: function() {
     return {
       format: 'CODE128',
+      renderer: 'canvas',
       width: 2,
       height: 100,
       displayValue: true,
@@ -66,14 +69,21 @@ var Barcode = React.createClass({
   },
 
   update: function() {
-    var canvas = getDOMNode(this.refs.canvas);
-    new JsBarcode(canvas, this.props.value, this.props);
+    var renderElement = getDOMNode(this.refs.renderElement);
+    new JsBarcode(renderElement, this.props.value, this.props);
   },
 
   render: function() {
-    return (
-      <canvas ref="canvas" />
-    );
+    if(this.props.renderer === "svg"){
+      return (
+        <svg ref="renderElement" />
+      );
+    }
+    else if(this.props.renderer === "canvas"){
+      return (
+        <canvas ref="renderElement" />
+      );
+    }
   },
 });
 
