@@ -40,7 +40,7 @@ var Barcode = React.createClass({
   getDefaultProps: function() {
     return {
       format: 'CODE128',
-      renderer: 'canvas',
+      renderer: 'svg',
       width: 2,
       height: 100,
       displayValue: true,
