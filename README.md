@@ -1,9 +1,9 @@
 # react-barcode
-<img src="https://raw.githubusercontent.com/kciter/react-barcode/master/images/barcode.png" alt="barcode">
+<img src="https://raw.githubusercontent.com/kciter/react-barcode/master/images/barcode.png" alt="barcode" width="600"><br>
 Preview: http://kciter.github.io/react-barcode/
 
 A `<Barcode/>` component for use with React.<br>
-This library wrapped [JsBarcode](https://github.com/lindell/JsBarcode)
+This library wrapped [JsBarcode](https://github.com/lindell/JsBarcode).
 
 ## Installation
 ```
