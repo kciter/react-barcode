@@ -1,6 +1,6 @@
 {
   "name": "react-barcode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component to generate barcodes",
   "keywords": [
     "react",
@@ -24,7 +24,7 @@
     "lib"
   ],
   "dependencies": {
-    "jsbarcode": "^3.0.0-beta.3"
+    "jsbarcode": "^3.0.1"
   },
   "peerDependencies": {
     "react": "0.12 - 0.14 || ^15.0.0"
