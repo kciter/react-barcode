@@ -74,12 +74,11 @@ var Barcode = React.createClass({
   },
 
   render: function() {
-    if(this.props.renderer === "svg"){
+    if (this.props.renderer === 'svg') {
       return (
         <svg ref="renderElement" />
       );
-    }
-    else if(this.props.renderer === "canvas"){
+    } else if (this.props.renderer === 'canvas') {
       return (
         <canvas ref="renderElement" />
       );
