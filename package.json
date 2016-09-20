@@ -24,7 +24,7 @@
     "lib"
   ],
   "dependencies": {
-    "jsbarcode": "~3.3.18",
+    "jsbarcode": "~3.4.0",
     "react": "^15.0.0"
   },
   "devDependencies": {
