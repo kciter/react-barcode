@@ -2,6 +2,8 @@
 
 var React = require('react');
 var JsBarcode = require('jsbarcode');
+var createClass = require('create-react-class');
+var PropTypes = require('prop-types');
 
 var getDOMNode;
 // Super naive semver detection but it's good enough. We support 0.12, 0.13
@@ -14,27 +16,27 @@ if (version[0] === '0' && version[1] === '13' || version[1] === '12') {
 }
 
 
-var Barcode = React.createClass({
+var Barcode = createClass({
   propTypes: {
-    value: React.PropTypes.string.isRequired,
-    renderer: React.PropTypes.string,
-    format: React.PropTypes.string,
-    width: React.PropTypes.number,
-    height: React.PropTypes.number,
-    displayValue: React.PropTypes.bool,
-    fontOptions: React.PropTypes.string,
-    font: React.PropTypes.string,
-    textAlign: React.PropTypes.string,
-    textPosition: React.PropTypes.string,
-    textMargin: React.PropTypes.number,
-    fontSize: React.PropTypes.number,
-    background: React.PropTypes.string,
-    lineColor: React.PropTypes.string,
-    margin: React.PropTypes.number,
-    marginTop: React.PropTypes.number,
-    marginBottom: React.PropTypes.number,
-    marginLeft: React.PropTypes.number,
-    marginRight: React.PropTypes.number,
+    value: PropTypes.string.isRequired,
+    renderer: PropTypes.string,
+    format: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    displayValue: PropTypes.bool,
+    fontOptions: PropTypes.string,
+    font: PropTypes.string,
+    textAlign: PropTypes.string,
+    textPosition: PropTypes.string,
+    textMargin: PropTypes.number,
+    fontSize: PropTypes.number,
+    background: PropTypes.string,
+    lineColor: PropTypes.string,
+    margin: PropTypes.number,
+    marginTop: PropTypes.number,
+    marginBottom: PropTypes.number,
+    marginLeft: PropTypes.number,
+    marginRight: PropTypes.number,
   },
 
   getDefaultProps: function() {
