@@ -3,8 +3,9 @@
 var Barcode = require('..');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createClass = require('create-react-class');
 
-var Demo = React.createClass({
+var Demo = createClass({
   getInitialState: function() {
     return {
       value: 'http://github.com/kciter',
