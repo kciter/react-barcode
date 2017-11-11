@@ -72,7 +72,12 @@ var Barcode = createClass({
 
   update: function() {
     var renderElement = getDOMNode(this.refs.renderElement);
-    new JsBarcode(renderElement, this.props.value).options(this.props);
+    try {
+      new JsBarcode(renderElement, this.props.value, Object.assign({}, this.props));
+    } catch (e) {
+      // prevent stop the parent process
+      window.console.error(e);
+    }
   },
 
   render: function() {
