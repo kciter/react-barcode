@@ -27,7 +27,9 @@
     "react": "^16.0.0"
   },
   "dependencies": {
-    "jsbarcode": "^3.8.0"
+    "jsbarcode": "^3.8.0",
+    "create-react-class": "^15.5.3",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
@@ -36,7 +38,6 @@
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
-    "create-react-class": "^15.5.3",
     "eslint": "^1.6.0",
     "eslint-plugin-react": "^3.5.1",
     "prop-types": "^15.5.10",
