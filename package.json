@@ -40,7 +40,6 @@
     "browserify": "^13.0.0",
     "eslint": "^1.6.0",
     "eslint-plugin-react": "^3.5.1",
-    "prop-types": "^15.5.10",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   }
