@@ -89,6 +89,10 @@ var Barcode = createClass({
       return (
         <canvas ref="renderElement" />
       );
+    } else if (this.props.renderer === 'img') {
+      return (
+        <img ref="renderElement" />
+      );
     }
   },
 });
