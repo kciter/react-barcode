@@ -51,6 +51,10 @@ class Barcode extends Component {
       return (
         <canvas ref="renderElement" />
       );
+    } else if (this.props.renderer === 'img') {
+      return (
+        <img ref="renderElement" />
+      );
     }
   };
 
