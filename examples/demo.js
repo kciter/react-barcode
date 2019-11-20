@@ -3,29 +3,29 @@
 var Barcode = require('..');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var createClass = require('create-react-class');
 
-var Demo = createClass({
-  getInitialState: function() {
-    return {
-      value: 'http://github.com/kciter',
-    }
-  },
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'https://github.com/kciter'
+    };
+  }
 
-  update: function(event) {
+  update(event) {
     this.setState({
       value: event.target.value,
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <div>
           <input
             type="text"
             style={{width: 300+'px'}}
-            onChange={this.update}
+            onChange={this.update.bind(this)}
             value={this.state.value}
           />
         </div>
@@ -52,8 +52,8 @@ var Demo = createClass({
         />
       </div>
     );
-  },
-});
+  }
+}
 
 ReactDOM.render(
   <Demo />,
