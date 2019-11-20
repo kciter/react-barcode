@@ -1,26 +1,41 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 var Barcode = require('..');
+
 var React = require('react');
+
 var ReactDOM = require('react-dom');
 
-var Demo = function (_React$Component) {
+var Demo =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(Demo, _React$Component);
 
   function Demo(props) {
+    var _this;
+
     _classCallCheck(this, Demo);
 
-    var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Demo).call(this, props));
     _this.state = {
       value: 'https://github.com/kciter'
     };
@@ -28,49 +43,42 @@ var Demo = function (_React$Component) {
   }
 
   _createClass(Demo, [{
-    key: 'update',
+    key: "update",
     value: function update(event) {
       this.setState({
         value: event.target.value
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'div',
-          null,
-          React.createElement('input', {
-            type: 'text',
-            style: { width: 300 + 'px' },
-            onChange: this.update.bind(this),
-            value: this.state.value
-          })
-        ),
-        React.createElement(Barcode, {
-          value: this.state.value,
-          width: this.state.width,
-          height: this.state.height,
-          format: this.state.format,
-          displayValue: this.state.displayValue,
-          fontOptions: this.state.fontOptions,
-          font: this.state.font,
-          textAlign: this.state.center,
-          textPosition: this.state.textPosition,
-          textMargin: this.state.textMargin,
-          fontSize: this.state.fontSize,
-          background: this.state.background,
-          lineColor: this.state.lineColor,
-          margin: this.state.margin,
-          marginTop: this.state.marginTop,
-          marginBottom: this.state.marginBottom,
-          marginLeft: this.state.marginLeft,
-          marginRight: this.state.marginRight
-        })
-      );
+      return React.createElement("div", null, React.createElement("div", null, React.createElement("input", {
+        type: "text",
+        style: {
+          width: 300 + 'px'
+        },
+        onChange: this.update.bind(this),
+        value: this.state.value
+      })), React.createElement(Barcode, {
+        value: this.state.value,
+        width: this.state.width,
+        height: this.state.height,
+        format: this.state.format,
+        displayValue: this.state.displayValue,
+        fontOptions: this.state.fontOptions,
+        font: this.state.font,
+        textAlign: this.state.center,
+        textPosition: this.state.textPosition,
+        textMargin: this.state.textMargin,
+        fontSize: this.state.fontSize,
+        background: this.state.background,
+        lineColor: this.state.lineColor,
+        margin: this.state.margin,
+        marginTop: this.state.marginTop,
+        marginBottom: this.state.marginBottom,
+        marginLeft: this.state.marginLeft,
+        marginRight: this.state.marginRight
+      }));
     }
   }]);
 
@@ -80,34 +88,34 @@ var Demo = function (_React$Component) {
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('demo'));
 
 },{"..":2,"react":68,"react-dom":62}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
+var _react = _interopRequireDefault(require("react"));
 
-var _react = require('react');
+var _jsbarcode = _interopRequireDefault(require("jsbarcode"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _jsbarcode = require('jsbarcode');
-
-var _jsbarcode2 = _interopRequireDefault(_jsbarcode);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
 }
 
 function _classCallCheck(instance, Constructor) {
@@ -116,22 +124,74 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
 function _possibleConstructorReturn(self, call) {
-  if (!self) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === 'undefined' ? 'undefined' : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+  }
+
+  return self;
 }
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
 }
 
-var getDOMNode;
-// Super naive semver detection but it's good enough. We support 0.12, 0.13
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+var getDOMNode; // Super naive semver detection but it's good enough. We support 0.12, 0.13
 // which both have getDOMNode on the ref. 0.14 and 15 make the DOM node the ref.
-var version = _react2.default.version.split(/[.-]/);
+
+var version = _react["default"].version.split(/[.-]/);
+
 if (version[0] === '0' && (version[1] === '13' || version[1] === '12')) {
   getDOMNode = function getDOMNode(ref) {
     return ref.getDOMNode();
@@ -142,20 +202,23 @@ if (version[0] === '0' && (version[1] === '13' || version[1] === '12')) {
   };
 }
 
-var Barcode = function (_Component) {
-  _inherits(Barcode, _Component);
+var Barcode =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Barcode, _React$Component);
 
   function Barcode(props) {
+    var _this;
+
     _classCallCheck(this, Barcode);
 
-    var _this = _possibleConstructorReturn(this, (Barcode.__proto__ || Object.getPrototypeOf(Barcode)).call(this, props));
-
-    _this.update = _this.update.bind(_this);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Barcode).call(this, props));
+    _this.update = _this.update.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Barcode, [{
-    key: 'shouldComponentUpdate',
+    key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps) {
       var _this2 = this;
 
@@ -164,64 +227,70 @@ var Barcode = function (_Component) {
       });
     }
   }, {
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
       this.update();
     }
   }, {
-    key: 'componentDidUpdate',
+    key: "componentDidUpdate",
     value: function componentDidUpdate() {
       this.update();
     }
   }, {
-    key: 'update',
+    key: "update",
     value: function update() {
       var renderElement = getDOMNode(this.refs.renderElement);
+
       try {
-        new _jsbarcode2.default(renderElement, this.props.value, Object.assign({}, this.props));
+        new _jsbarcode["default"](renderElement, this.props.value, Object.assign({}, this.props));
       } catch (e) {
         // prevent stop the parent process
         window.console.error(e);
       }
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       if (this.props.renderer === 'svg') {
-        return _react2.default.createElement('svg', { ref: 'renderElement' });
+        return _react["default"].createElement("svg", {
+          ref: "renderElement"
+        });
       } else if (this.props.renderer === 'canvas') {
-        return _react2.default.createElement('canvas', { ref: 'renderElement' });
+        return _react["default"].createElement("canvas", {
+          ref: "renderElement"
+        });
       } else if (this.props.renderer === 'img') {
-        return _react2.default.createElement('img', { ref: 'renderElement' });
+        return _react["default"].createElement("img", {
+          ref: "renderElement"
+        });
       }
     }
   }]);
 
   return Barcode;
-}(_react.Component);
+}(_react["default"].Component);
 
 Barcode.propTypes = {
-  value: _propTypes2.default.string.isRequired,
-  renderer: _propTypes2.default.string,
-  format: _propTypes2.default.string,
-  width: _propTypes2.default.number,
-  height: _propTypes2.default.number,
-  displayValue: _propTypes2.default.bool,
-  fontOptions: _propTypes2.default.string,
-  font: _propTypes2.default.string,
-  textAlign: _propTypes2.default.string,
-  textPosition: _propTypes2.default.string,
-  textMargin: _propTypes2.default.number,
-  fontSize: _propTypes2.default.number,
-  background: _propTypes2.default.string,
-  lineColor: _propTypes2.default.string,
-  margin: _propTypes2.default.number,
-  marginTop: _propTypes2.default.number,
-  marginBottom: _propTypes2.default.number,
-  marginLeft: _propTypes2.default.number,
-  marginRight: _propTypes2.default.number
+  value: _propTypes["default"].string.isRequired,
+  renderer: _propTypes["default"].string,
+  format: _propTypes["default"].string,
+  width: _propTypes["default"].number,
+  height: _propTypes["default"].number,
+  displayValue: _propTypes["default"].bool,
+  fontOptions: _propTypes["default"].string,
+  font: _propTypes["default"].string,
+  textAlign: _propTypes["default"].string,
+  textPosition: _propTypes["default"].string,
+  textMargin: _propTypes["default"].number,
+  fontSize: _propTypes["default"].number,
+  background: _propTypes["default"].string,
+  lineColor: _propTypes["default"].string,
+  margin: _propTypes["default"].number,
+  marginTop: _propTypes["default"].number,
+  marginBottom: _propTypes["default"].number,
+  marginLeft: _propTypes["default"].number,
+  marginRight: _propTypes["default"].number
 };
-
 Barcode.defaultProps = {
   format: 'CODE128',
   renderer: 'svg',
@@ -238,7 +307,6 @@ Barcode.defaultProps = {
   lineColor: '#000000',
   margin: 10
 };
-
 module.exports = Barcode;
 
 },{"jsbarcode":3,"prop-types":58,"react":68}],3:[function(require,module,exports){

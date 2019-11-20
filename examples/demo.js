@@ -1,14 +1,12 @@
-'use strict';
-
-var Barcode = require('..');
-var React = require('react');
-var ReactDOM = require('react-dom');
+const Barcode = require('..');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
 class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'https://github.com/kciter'
+      value: 'https://github.com/kciter',
     };
   }
 
