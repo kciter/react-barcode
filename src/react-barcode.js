@@ -1,6 +1,4 @@
-'use strict';
-
-import React, {Component} from 'react';
+import React from 'react';
 import JsBarcode from 'jsbarcode';
 import PropTypes from 'prop-types';
 
@@ -14,33 +12,33 @@ if (version[0] === '0' && (version[1] === '13' || version[1] === '12')) {
   getDOMNode = (ref) => ref;
 }
 
-class Barcode extends Component {
+class Barcode extends React.Component {
   constructor(props) {
     super(props);
     this.update = this.update.bind(this);
-  };
+  }
 
-    shouldComponentUpdate(nextProps) {
-      return Object.keys(Barcode.propTypes).some((k) => this.props[k] !== nextProps[k]);
-    };
-  
-    componentDidMount() {
-      this.update();
-    }; 
-  
-    componentDidUpdate() {
-      this.update();
-    };
-  
-    update() {
-      var renderElement = getDOMNode(this.refs.renderElement);
-      try {
-        new JsBarcode(renderElement, this.props.value, Object.assign({}, this.props));
-      } catch (e) {
-        // prevent stop the parent process
-        window.console.error(e);
-      }
-    };
+  shouldComponentUpdate(nextProps) {
+    return Object.keys(Barcode.propTypes).some((k) => this.props[k] !== nextProps[k]);
+  }
+
+  componentDidMount() {
+    this.update();
+  }
+
+  componentDidUpdate() {
+    this.update();
+  }
+
+  update() {
+    var renderElement = getDOMNode(this.refs.renderElement);
+    try {
+      new JsBarcode(renderElement, this.props.value, Object.assign({}, this.props));
+    } catch (e) {
+      // prevent stop the parent process
+      window.console.error(e);
+    }
+  }
 
   render() {
     if (this.props.renderer === 'svg') {
@@ -56,9 +54,7 @@ class Barcode extends Component {
         <img ref="renderElement" />
       );
     }
-  };
-
-
+  }
 }
 
 Barcode.propTypes = {
