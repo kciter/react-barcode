@@ -32,7 +32,7 @@ declare module "react-barcode" {
     } & ReactBarcode.Options;
   }
 
-  declare const ReactBarcode: React.FunctionComponent<Props>;
+  declare const ReactBarcode: React.FunctionComponent<ReactBarcode.Props>;
 
   export = ReactBarcode;
 }
