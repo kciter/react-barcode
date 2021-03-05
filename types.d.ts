@@ -1,5 +1,4 @@
 declare module "react-barcode" {
-  declare namespace ReactBarcode {
     declare type Options = {
       width?: number;
       height?: number;
