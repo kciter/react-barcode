@@ -29,7 +29,6 @@ declare module "react-barcode" {
     declare type Props = {
       value: string;
     } & ReactBarcode.Options;
-  }
 
   declare const ReactBarcode: React.FunctionComponent<ReactBarcode.Props>;
 
