@@ -22,6 +22,16 @@ ReactDOM.render(
 );
 ```
 
+Or
+
+```js
+import Barcode from 'react-barcode';
+
+export const Example: FunctionComponent = () => {
+    return <Barcode value="barcode-example" />;
+};
+```
+
 ## Options:
 
 For information about how to use the options, see [the wiki page](https://github.com/lindell/JsBarcode/wiki/Options).

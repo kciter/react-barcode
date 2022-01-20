@@ -1,4 +1,4 @@
-type Options = {
+export interface Options {
   width?: number;
   height?: number;
   format?:
@@ -8,7 +8,8 @@ type Options = {
     | "ITF14"
     | "MSI"
     | "pharmacode"
-    | "codabar";
+    | "codabar"
+    | "upc";
   displayValue?: boolean;
   fontOptions?: string;
   font?: string;
@@ -23,12 +24,11 @@ type Options = {
   marginBottom?: number;
   marginLeft?: number;
   marginRight?: number;
-};
+}
 
-type Props = Options & {
+export interface BarcodeProps extends Options {
   value: string;
-};
+}
 
-declare const ReactBarcode: React.FunctionComponent<Props>;
+export default class Barcode extends React.Component<BarcodeProps> {}
 
-export default ReactBarcode;
