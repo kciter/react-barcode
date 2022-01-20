@@ -15,6 +15,7 @@ if (version[0] === '0' && (version[1] === '13' || version[1] === '12')) {
 class Barcode extends React.Component {
   constructor(props) {
     super(props);
+    this.renderElementRef = React.createRef();
     this.update = this.update.bind(this);
   }
 
@@ -31,7 +32,7 @@ class Barcode extends React.Component {
   }
 
   update() {
-    var renderElement = getDOMNode(this.refs.renderElement);
+    var renderElement = getDOMNode(this.renderElementRef.current);
     try {
       new JsBarcode(renderElement, this.props.value, Object.assign({}, this.props));
     } catch (e) {
@@ -43,15 +44,15 @@ class Barcode extends React.Component {
   render() {
     if (this.props.renderer === 'svg') {
       return (
-        <svg ref="renderElement" />
+        <svg ref={this.renderElementRef} />
       );
     } else if (this.props.renderer === 'canvas') {
       return (
-        <canvas ref="renderElement" />
+        <canvas ref={this.renderElementRef} />
       );
     } else if (this.props.renderer === 'img') {
       return (
-        <img ref="renderElement" />
+        <img ref={this.renderElementRef} />
       );
     }
   }
