@@ -213,6 +213,7 @@ function (_React$Component) {
     _classCallCheck(this, Barcode);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Barcode).call(this, props));
+    _this.renderElementRef = _react["default"].createRef();
     _this.update = _this.update.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -239,7 +240,7 @@ function (_React$Component) {
   }, {
     key: "update",
     value: function update() {
-      var renderElement = getDOMNode(this.refs.renderElement);
+      var renderElement = getDOMNode(this.renderElementRef.current);
 
       try {
         new _jsbarcode["default"](renderElement, this.props.value, Object.assign({}, this.props));
@@ -253,15 +254,15 @@ function (_React$Component) {
     value: function render() {
       if (this.props.renderer === 'svg') {
         return _react["default"].createElement("svg", {
-          ref: "renderElement"
+          ref: this.renderElementRef
         });
       } else if (this.props.renderer === 'canvas') {
         return _react["default"].createElement("canvas", {
-          ref: "renderElement"
+          ref: this.renderElementRef
         });
       } else if (this.props.renderer === 'img') {
         return _react["default"].createElement("img", {
-          ref: "renderElement"
+          ref: this.renderElementRef
         });
       }
     }
