@@ -5,7 +5,7 @@ lib:
 
 lib/react-barcode.js: lib src/react-barcode.js
 	./node_modules/.bin/babel src -d lib
-	cp src/react-barcode.d.ts lib
+	cp src/index.d.ts .
 
 examples/bundle.js: lib/react-barcode.js examples/demo.js
 	./node_modules/.bin/browserify -t babelify examples/demo.js -o examples/bundle.js
