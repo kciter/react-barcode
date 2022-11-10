@@ -9,7 +9,7 @@
   ],
   "homepage": "http://github.com/kciter/react-barcode",
   "main": "lib/react-barcode.js",
-  "types": "src/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "lint": "eslint src/ samples/demo.js",
     "prepublish": "make clean && make all",
