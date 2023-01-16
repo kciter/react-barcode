@@ -1,6 +1,7 @@
 export interface Options {
   width?: number;
   height?: number;
+  renderer?: "canvas" | "img" | "svg";
   format?:
     | "CODE39"
     | "CODE128"
@@ -30,5 +31,7 @@ export interface BarcodeProps extends Options {
   value: string;
 }
 
-export default class Barcode extends React.Component<BarcodeProps> {}
+export default class Barcode extends React.Component<BarcodeProps> {
+  renderElementRef: React.RefObject<HTMLCanvasElement | SVGElement | HTMLImageElement>;
+}
 
