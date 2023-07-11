@@ -7,6 +7,7 @@ export interface Options {
     | "CODE128"
     | "EAN13"
     | "ITF14"
+    | "ITF"
     | "MSI"
     | "pharmacode"
     | "codabar"
