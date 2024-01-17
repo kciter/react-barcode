@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface Options {
   width?: number;
   height?: number;
