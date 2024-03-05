@@ -53,7 +53,9 @@ For information about how to use the options, see [the wiki page](https://github
   marginTop: undefined,
   marginBottom: undefined,
   marginLeft: undefined,
-  marginRight: undefined
+  marginRight: undefined,
+  id: undefined,
+  className: undefined
 }
 ```
 

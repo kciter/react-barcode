@@ -42,17 +42,18 @@ class Barcode extends React.Component {
   }
 
   render() {
+    const { id, className } = this.props;
     if (this.props.renderer === 'svg') {
       return (
-        <svg ref={this.renderElementRef} />
+        <svg ref={this.renderElementRef} id={id} className={className} />
       );
     } else if (this.props.renderer === 'canvas') {
       return (
-        <canvas ref={this.renderElementRef} />
+        <canvas ref={this.renderElementRef} id={id} className={className} />
       );
     } else if (this.props.renderer === 'img') {
       return (
-        <img ref={this.renderElementRef} />
+        <img ref={this.renderElementRef} id={id} className={className} />
       );
     }
   }
@@ -78,6 +79,8 @@ Barcode.propTypes = {
   marginBottom: PropTypes.number,
   marginLeft: PropTypes.number,
   marginRight: PropTypes.number,
+  id: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Barcode.defaultProps = {
@@ -95,6 +98,7 @@ Barcode.defaultProps = {
   background: '#ffffff',
   lineColor: '#000000',
   margin: 10,
+  className: '',
 };
 
 module.exports = Barcode;
