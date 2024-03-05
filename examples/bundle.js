@@ -77,7 +77,9 @@ function (_React$Component) {
         marginTop: this.state.marginTop,
         marginBottom: this.state.marginBottom,
         marginLeft: this.state.marginLeft,
-        marginRight: this.state.marginRight
+        marginRight: this.state.marginRight,
+        id: this.state.id,
+        className: this.state.className
       }));
     }
   }]);
@@ -92,18 +94,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('demo')
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
-var _react = _interopRequireDefault(require("react"));
-
-var _jsbarcode = _interopRequireDefault(require("jsbarcode"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
 function _typeof(obj) {
   if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
     _typeof = function _typeof(obj) {
@@ -116,6 +106,18 @@ function _typeof(obj) {
   }
 
   return _typeof(obj);
+}
+
+var _react = _interopRequireDefault(require("react"));
+
+var _jsbarcode = _interopRequireDefault(require("jsbarcode"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
 }
 
 function _classCallCheck(instance, Constructor) {
@@ -252,17 +254,27 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this$props = this.props,
+          id = _this$props.id,
+          className = _this$props.className;
+
       if (this.props.renderer === 'svg') {
         return _react["default"].createElement("svg", {
-          ref: this.renderElementRef
+          ref: this.renderElementRef,
+          id: id,
+          className: className
         });
       } else if (this.props.renderer === 'canvas') {
         return _react["default"].createElement("canvas", {
-          ref: this.renderElementRef
+          ref: this.renderElementRef,
+          id: id,
+          className: className
         });
       } else if (this.props.renderer === 'img') {
         return _react["default"].createElement("img", {
-          ref: this.renderElementRef
+          ref: this.renderElementRef,
+          id: id,
+          className: className
         });
       }
     }
@@ -290,7 +302,9 @@ Barcode.propTypes = {
   marginTop: _propTypes["default"].number,
   marginBottom: _propTypes["default"].number,
   marginLeft: _propTypes["default"].number,
-  marginRight: _propTypes["default"].number
+  marginRight: _propTypes["default"].number,
+  id: _propTypes["default"].string,
+  className: _propTypes["default"].string
 };
 Barcode.defaultProps = {
   format: 'CODE128',
@@ -306,7 +320,8 @@ Barcode.defaultProps = {
   fontSize: 20,
   background: '#ffffff',
   lineColor: '#000000',
-  margin: 10
+  margin: 10,
+  className: ''
 };
 module.exports = Barcode;
 
