@@ -1,4 +1,5 @@
 # react-barcode
+
 <img src="https://raw.githubusercontent.com/kciter/react-barcode/master/images/barcode.png" alt="barcode" width="600"><br>
 Preview: http://kciter.github.io/react-barcode/
 
