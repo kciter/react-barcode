@@ -47,6 +47,8 @@ class Demo extends React.Component {
           marginBottom={this.state.marginBottom}
           marginLeft={this.state.marginLeft}
           marginRight={this.state.marginRight}
+          id={this.state.id}
+          className={this.state.className}
         />
       </div>
     );
