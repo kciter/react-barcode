@@ -1,6 +1,6 @@
 {
   "name": "react-barcode",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "React component to generate barcodes",
   "keywords": [
     "react",
