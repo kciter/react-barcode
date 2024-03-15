@@ -7,6 +7,9 @@ export interface Options {
   format?:
     | "CODE39"
     | "CODE128"
+    | "CODE128A"
+    | "CODE128B"
+    | "CODE128C"
     | "EAN13"
     | "ITF14"
     | "ITF"
