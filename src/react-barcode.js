@@ -81,6 +81,7 @@ Barcode.propTypes = {
   marginRight: PropTypes.number,
   id: PropTypes.string,
   className: PropTypes.string,
+  ean128: PropTypes.bool,
 };
 
 Barcode.defaultProps = {
@@ -99,6 +100,7 @@ Barcode.defaultProps = {
   lineColor: '#000000',
   margin: 10,
   className: '',
+  ean128: false,
 };
 
 module.exports = Barcode;
