@@ -304,7 +304,8 @@ Barcode.propTypes = {
   marginLeft: _propTypes["default"].number,
   marginRight: _propTypes["default"].number,
   id: _propTypes["default"].string,
-  className: _propTypes["default"].string
+  className: _propTypes["default"].string,
+  ean128: _propTypes["default"].bool
 };
 Barcode.defaultProps = {
   format: 'CODE128',
@@ -321,7 +322,8 @@ Barcode.defaultProps = {
   background: '#ffffff',
   lineColor: '#000000',
   margin: 10,
-  className: ''
+  className: '',
+  ean128: false
 };
 module.exports = Barcode;
 
