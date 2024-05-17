@@ -40,7 +40,7 @@ export interface Options {
   marginBottom?: number;
   marginLeft?: number;
   marginRight?: number;
-  ean128: boolean;
+  ean128?: boolean;
 }
 
 export interface BarcodeProps extends Options {
