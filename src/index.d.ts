@@ -40,6 +40,8 @@ export interface Options {
   marginBottom?: number;
   marginLeft?: number;
   marginRight?: number;
+  id?: string;
+  className?: string;
   ean128?: boolean;
 }
 
