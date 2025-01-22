@@ -34,7 +34,11 @@ class Barcode extends React.Component {
   update() {
     var renderElement = getDOMNode(this.renderElementRef.current);
     try {
-      new JsBarcode(renderElement, this.props.value, Object.assign({}, this.props));
+      new JsBarcode(
+        renderElement,
+        this.props.value,
+        Object.assign({text: this.props.text ?? this.props.value}, this.props)
+      );
     } catch (e) {
       // prevent stop the parent process
       window.console.error(e);
@@ -61,6 +65,7 @@ class Barcode extends React.Component {
 
 Barcode.propTypes = {
   value: PropTypes.string.isRequired,
+  text: PropTypes.string,
   renderer: PropTypes.string,
   format: PropTypes.string,
   width: PropTypes.number,

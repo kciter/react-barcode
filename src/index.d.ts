@@ -27,6 +27,7 @@ export interface Options {
     | "codabar"
     | "GenericBarcode";
   displayValue?: boolean;
+  text?: string;
   fontOptions?: string;
   font?: string;
   textAlign?: string;
