@@ -7,6 +7,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       value: 'https://github.com/kciter',
+      text: 'Custom Text',
     };
   }
 
@@ -30,6 +31,7 @@ class Demo extends React.Component {
 
         <Barcode
           value={this.state.value}
+          text={this.state.text}
           width={this.state.width}
           height={this.state.height}
           format={this.state.format}
