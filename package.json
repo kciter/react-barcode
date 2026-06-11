@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/kciter/react-barcode.git"
   },
+  "bugs": {
+    "url": "https://github.com/kciter/react-barcode/issues"
+  },
   "license": "ISC",
   "files": [
     "lib"
