@@ -1,6 +1,9 @@
 {
   "name": "react-barcode",
   "version": "1.6.1",
+  "bugs": {
+    "url": "https://github.com/kciter/react-barcode/issues"
+  },
   "description": "React component to generate barcodes",
   "keywords": [
     "react",
